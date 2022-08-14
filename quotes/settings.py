@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     #local apps
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
+    'quotations.apps.QuotationsConfig',
 ]
 
 MIDDLEWARE = [
