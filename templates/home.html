@@ -12,4 +12,11 @@
         <a href="{% url 'login' %}">Log in</a>
         <a href="{% url 'signup' %}">Sign up</a>
     {% endif %}
+
+    {% for bookQuote in object_list %}
+        <div class="quote-entry">
+            <h2><a href="{% url 'quote_detail' bookQuote.pk %}">{{ bookQuote.title }}</a></h2>
+            <p>{{ bookQuote.quote }}</p>
+        </div>
+    {% endfor %}
 {% endblock content %}
