@@ -8,6 +8,14 @@
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
     </head>
     <body>
+        <header>
+            <div class="nav-left">
+                <h1><a href="{% url 'home' %}">Quotes App</a></h1>
+            </div>
+            <div class="nav-right">
+                <a href="{% url 'quote_new' %}">New quote</a>
+            </div>
+        </header>
         <main class="container">
             {% block content %}
             {% endblock content %}
