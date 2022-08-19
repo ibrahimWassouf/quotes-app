@@ -13,6 +13,8 @@
         <a href="{% url 'signup' %}">Sign up</a>
     {% endif %}
 
+    <h2><a href="{% url 'collections' %}">View Collections</a></h2>
+
     {% for bookQuote in object_list %}
         <div class="quote-entry">
             <h2><a href="{% url 'quote_detail' bookQuote.pk %}">{{ bookQuote.title }}</a></h2>

@@ -32,11 +32,29 @@ class QuoteDeleteView(LoginRequiredMixin, DeleteView):
     template_name='quote_delete.html'
     success_url = reverse_lazy('home')
 
+class CollectionsList(ListView):
+    model = Collections
+    template_name = 'collections_list.html'
+
+class CollectionDetailView(DetailView):
+    model = Collections
+    template_name= 'collection_detail.html'
+
+
+
 
 @receiver(post_save, sender=CustomUser)
 def createAllCollections(sender, instance, created, **kwargs):
     if created:
         allCollections = Collections(title="All Quotes")
         allCollections.save()
-    else:
-        pass
+
+@receiver(post_save, sender=BookQuote)
+def quoteCreated(sender, instance, created, **kwargs):
+    if created:
+        allCollections = Collections.objects.get(title="All Quotes")
+        allCollections.quotes.add(instance)
+
+
+allCollections = Collections.objects.get(title="All Quotes")
+quotesInCollection = allCollections.quotes.all()
