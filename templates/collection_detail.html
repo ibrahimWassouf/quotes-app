@@ -4,7 +4,7 @@
 {% block content %}
     <h2><a href="{% url 'collections' %}">All Collections</a></h2>
 
-    {% for object in object_list.quotes %}
-    <p>{{object.title}}</p>
+    {% for quote in object.quotes.all %}
+    <p>{{quote.title}}</p>
     {% endfor %}
 {% endblock content %}
