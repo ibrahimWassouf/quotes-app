@@ -22,6 +22,10 @@ class QuoteCreateView(LoginRequiredMixin, CreateView):
     template_name = 'quote_new.html'
     fields = ['title', 'author', 'quote']
 
+    def form_valid(self, form):
+        form.instance.creator = self.request.user
+        return super().form_valid(form)
+
 class QuoteUpdateView(LoginRequiredMixin, UpdateView):
     model = BookQuote
     template_name = 'quote_edit.html'
@@ -54,7 +58,3 @@ def quoteCreated(sender, instance, created, **kwargs):
     if created:
         allCollections = Collections.objects.get(title="All Quotes")
         allCollections.quotes.add(instance)
-
-
-allCollections = Collections.objects.get(title="All Quotes")
-quotesInCollection = allCollections.quotes.all()
