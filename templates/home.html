@@ -15,10 +15,10 @@
 
     <h2><a href="{% url 'collections' %}">View Collections</a></h2>
 
-    {% for object in object_list %}
+    {% for bookQuote in object_list %}
         <div class="quote-entry">
-            <h2><a href="{% url 'quote_detail' object.pk %}">{{ bookQuote.title }}</a></h2>
-            <p>{{ object.quote }}</p>
+            <h2><a href="{% url 'quote_detail' bookQuote.pk %}">{{ bookQuote.title }}</a></h2>
+            <p>{{ bookQuote.quote }}</p>
         </div>
     {% endfor %}
 {% endblock content %}
