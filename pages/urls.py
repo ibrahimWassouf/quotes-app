@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import HomePageView, QuoteDetailView, QuoteCreateView, QuoteUpdateView, QuoteDeleteView, CollectionsList, CollectionDetailView
+from .views import HomePageView, QuoteDetailView, QuoteCreateView, QuoteUpdateView, QuoteDeleteView, CollectionsList, CollectionDetailView, CollectionCreateView
 
 urlpatterns = [
     path('quote/<int:pk>/edit', QuoteUpdateView.as_view(), name = 'quote_edit'),
@@ -8,5 +8,6 @@ urlpatterns = [
     path('quote/new/', QuoteCreateView.as_view(), name = 'quote_new'),
     path('quote/<int:pk>/delete', QuoteDeleteView.as_view(), name='quote_delete'),
     path('collections', CollectionsList.as_view(), name='collections'),
-    path('collections/<int:pk>/', CollectionDetailView.as_view(), name='collection_detail')
+    path('collections/<int:pk>/', CollectionDetailView.as_view(), name='collection_detail'),
+    path('collections/new', CollectionCreateView.as_view(), name='collection_new')
 ]

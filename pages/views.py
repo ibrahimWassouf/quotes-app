@@ -63,6 +63,15 @@ class CollectionDetailView(DetailView):
     model = Collections
     template_name= 'collection_detail.html'
 
+class CollectionCreateView(CreateView):
+    model = Collections
+    template_name = 'collection_new.html'
+    fields = ['title']
+
+    def form_valid(self, form):
+        form.instance.creator = self.request.user
+        return super().form_valid(form)
+
 
 
 #creates a collection called 'All Quotes' for each newly signed up user
