@@ -7,6 +7,7 @@ from users.models import CustomUser
 from django.urls import reverse_lazy
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from quotations.forms import AddQuotesForm
 # Create your views here.
 
 class HomePageView(ListView):
@@ -16,6 +17,14 @@ class HomePageView(ListView):
     #updates the query set to include only the quotes created by the user
     def get_queryset(self):
         quoteList = BookQuote.objects.all().filter(creator=self.request.user)
+        return quoteList
+
+class QuoteList(ListView):
+    model = BookQuote
+    template_name = 'quote_list.html'
+
+    def get_queryset(self):
+        quoteList = BookQuote.objects.all().filter(creator=self.request.user.username)
         return quoteList
 
 class QuoteDetailView(LoginRequiredMixin, DetailView):
@@ -72,6 +81,19 @@ class CollectionCreateView(CreateView):
         form.instance.creator = self.request.user
         return super().form_valid(form)
 
+class CollectionAddView(UpdateView):
+    model = Collections
+    template_name = 'collection_add.html'
+    form_class = AddQuotesForm
+
+    
+    def get_form_kwargs(self):
+        kwargs = super(CollectionAddView, self).get_form_kwargs()
+        kwargs['request'] = self.request
+        return kwargs
+
+ 
+
 
 
 #creates a collection called 'All Quotes' for each newly signed up user
@@ -85,5 +107,6 @@ def createAllCollections(sender, instance, created, **kwargs):
 @receiver(post_save, sender=BookQuote)
 def quoteCreated(sender, instance, created, **kwargs):
     if created:
-        allCollections = Collections.objects.get(creator=instance.creator)
+        allCollections = Collections.objects.get(title="All Quotes", creator=instance.creator)
         allCollections.quotes.add(instance)
+

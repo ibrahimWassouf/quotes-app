@@ -26,3 +26,5 @@ class Collections(models.Model):
         return reverse('collection_detail', args=[str(self.id)])
 
 
+
+
