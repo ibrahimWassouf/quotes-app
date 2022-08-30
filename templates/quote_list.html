@@ -1,4 +1,11 @@
+{% extends '_base.html' %}
 
-{% for object in object_list %}
-    <h3>{{object.title}}</h3>
-{% endfor %}
+{% block content %}
+<a class='btn' href="{% url 'quote_new' %}">+ New Quote</a>
+    {% for bookQuote in object_list %}
+    <div class="quote-entry">
+        <h4><a href="{% url 'quote_detail' bookQuote.pk %}">{{ bookQuote.title }}</a></h4>
+        <p>{{ bookQuote.quote }}</p>
+    </div>
+    {% endfor %}
+{% endblock content %}

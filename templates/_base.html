@@ -8,18 +8,25 @@
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
     </head>
     <body>
-        <header>
+        <header class="navbar">
             <div>
-                <h1><a href="{% url 'home' %}">Quotes App</a></h1>
+                <h1 id="headline-title-nav"><a href="{% url 'home' %}">Quotes App</a></h1>
             </div>
             <div>
-                <a href="{% url 'quote_new' %}">New quote</a>
-            </div>
-            <div>
-                <a href="{% url 'collection_new' %}">New Collection</a>
+                {% if user.is_authenticated%}
+                    <p>{{ user.username }} <a href='{% url "logout" %}'>Log out</a></p>
+                {% else %}
+                    <a href="{% url 'signup' %}">Sign up</a>
+                    <a href="{% url 'login' %}">Log in</a>
+                {% endif %}
             </div>
         </header>
-        <main class="container">
+        <main>
+            <nav id="coqu-nav">
+                <h3 class="collection-quote-item"><a href="{% url 'collections' %}">Collections</a></h3>
+                <h3 class="collection-qoute-item"><a href="{% url 'quote_list' %}">Quotes</a></h3>
+            </nav>
+            
             {% block content %}
             {% endblock content %}
         </main>

@@ -53,7 +53,7 @@ class QuoteUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 class QuoteDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = BookQuote
-    template_name='quote_delete.html'
+    template_name='quotes_delete.html'
     success_url = reverse_lazy('home')
 
     def test_func(self):

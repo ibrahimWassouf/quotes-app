@@ -1,8 +1,7 @@
 {% extends '_base.html' %}
 
-<h2><a href="{% url 'home' %}">View Quotes</a></h2>
-
 {%block content%}
+<a class="btn" href="{% url 'collection_new' %}">+ New Collection</a>
     {% for object in object_list %}
         <h2><a href="{% url 'collection_detail' object.pk%}">{{object.title}}</a></h2>
     {% endfor %}
