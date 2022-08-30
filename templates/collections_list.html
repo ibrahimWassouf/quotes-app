@@ -1,8 +1,14 @@
 {% extends '_base.html' %}
 
 {%block content%}
-<a class="btn" href="{% url 'collection_new' %}">+ New Collection</a>
-    {% for object in object_list %}
-        <h2><a href="{% url 'collection_detail' object.pk%}">{{object.title}}</a></h2>
-    {% endfor %}
+    <a class="btn" href="{% url 'collection_new' %}">+ New Collection</a>
+    
+    <section class="collection-quote-list">
+        {% for object in object_list %}
+            <div class="individual-entry">
+                <h2><a href="{% url 'collection_detail' object.pk%}">{{object.title}}</a></h2>
+            </div>
+        {% endfor %}
+        
+    </section>
 {%endblock content%}

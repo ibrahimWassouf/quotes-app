@@ -1,7 +1,20 @@
 body {
+    display: flex;
+    flex-direction: column;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 10px;
+    overflow: hidden;
+    margin: auto;
+    width: 95vw;
 }
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 80vw;
+}
+
 a {
     color: inherit;
     text-decoration: none;
@@ -30,8 +43,9 @@ a:hover {
 
 #coqu-nav {
     display: flex;
-    justify-content: space-around;
-    margin: 0 20vw;
+    justify-content: space-between;
+    width: 20rem;
+    align-self: center;
 }
 .collectoin-quote-item {
     padding: 5px;
@@ -40,8 +54,34 @@ a:hover {
 .btn {
     background-color: darkred;
     color: white;
+    width: 10rem;
 }
 
 .btn:hover {
     color: darkred;
 }
+
+.collection-quote-list {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    width: 90%;
+    margin-top: 5rem;
+}
+
+.individual-entry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    padding: 20px 0 ;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.individual-entry p {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    align-self: flex-end;
+
+}
+

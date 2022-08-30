@@ -2,10 +2,13 @@
 
 {% block content %}
 <a class='btn' href="{% url 'quote_new' %}">+ New Quote</a>
+<section class='collection-quote-list'> 
+
     {% for bookQuote in object_list %}
-    <div class="quote-entry">
-        <h4><a href="{% url 'quote_detail' bookQuote.pk %}">{{ bookQuote.title }}</a></h4>
-        <p>{{ bookQuote.quote }}</p>
+    <div class="individual-entry">
+        <h4><a href="{% url 'quote_detail' bookQuote.pk %}">"{{ bookQuote.quote }}"</a></h4>
+        <p>~ {{ bookQuote.author }}</p>
     </div>
     {% endfor %}
+</section>
 {% endblock content %}
