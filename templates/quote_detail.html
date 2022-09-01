@@ -2,11 +2,13 @@
 
 {% block content %}
     <div class="quote-entry">
-        <h2>{{ object.title }}</h2>
+        <h2>"{{ object.title }}"</h2>
         <p>{{ object.quote }}</p>
         <p>{{ object.author}}</p>
     </div>
 
-    <a href="{% url 'quote_edit' object.pk %}">Edit Quote</a>
-    <a href="{% url 'quote_delete' object.pk %}">Delete Quote</a>
+    <div id="quote-detail-buttons">
+        <a class="btn" href="{% url 'quote_edit' object.pk %}">Edit Quote</a>
+        <a class="btn" href="{% url 'quote_delete' object.pk %}">Delete Quote</a>
+    </div>
 {% endblock content %}
