@@ -34,7 +34,7 @@ class QuoteDetailView(LoginRequiredMixin, DetailView):
 class QuoteCreateView(LoginRequiredMixin, CreateView):
     model = BookQuote
     template_name = 'quote_new.html'
-    fields = ['title', 'author', 'quote']
+    fields = ['title', 'author', 'quote', 'page', 'year_of_publication']
 
     #automatically fills the creator field with the user's name
     def form_valid(self, form):
@@ -44,8 +44,7 @@ class QuoteCreateView(LoginRequiredMixin, CreateView):
 class QuoteUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = BookQuote
     template_name = 'quote_edit.html'
-    fields = ['title', 'author', 'quote']
-
+    fields = ['title', 'author', 'quote', 'page', 'year_of_publication']
     #ensures only the correct user -the creator- has access to the view
     def test_func(self):
         obj = self.get_object()
@@ -72,7 +71,7 @@ class CollectionDetailView(DetailView):
     model = Collections
     template_name= 'collection_detail.html'
 
-class CollectionCreateView(CreateView):
+class CollectionCreateView(LoginRequiredMixin, CreateView):
     model = Collections
     template_name = 'collection_new.html'
     fields = ['title']
@@ -81,7 +80,7 @@ class CollectionCreateView(CreateView):
         form.instance.creator = self.request.user
         return super().form_valid(form)
 
-class CollectionAddView(UpdateView):
+class CollectionAddView(UserPassesTestMixin, UpdateView):
     model = Collections
     template_name = 'collection_add.html'
     form_class = AddQuotesForm
@@ -91,6 +90,10 @@ class CollectionAddView(UpdateView):
         kwargs = super(CollectionAddView, self).get_form_kwargs()
         kwargs['request'] = self.request
         return kwargs
+
+    def test_func(self):
+        obj = self.get_object()
+        return obj.creator == self.request.user.username
 
  
 

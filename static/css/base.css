@@ -1,129 +1,303 @@
-body {
-    display: flex;
-    flex-direction: column;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    padding: 10px;
-    overflow-x: hidden;
-    margin: auto;
-    width: 95vw;
+ @media only screen and (min-width: 601px){
+    body {
+        display: flex;
+        flex-direction: column;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        padding: 10px;
+        overflow-x: hidden;
+        margin: auto;
+        width: 95vw;
+        font-size: 17px;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        width: 80vw;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+    a:hover {
+        color: darkred;
+    }
+
+    #top-block {
+        display: flex;
+        height: 50vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #headline-title-nav {
+        font-family: 'Courier New', Courier, monospace;
+        background-color: yellow;
+        font-size: 40px;
+    }
+    #headline-title {
+        font-family: 'Courier New', Courier, monospace;
+        background-color: yellow;
+        display:inline-block;
+        font-size: 350%;
+    }
+
+    #coqu-nav {
+        display: flex;
+        justify-content: space-between;
+        width: 250px;
+        align-self: center;
+    }
+
+    .collectoin-quote-item {
+        padding: 5px;
+    }
+
+    .btn {
+        background-color: darkred;
+        color: white;
+        width: 150px;
+    }
+
+    .btn:hover {
+        color: darkred;
+    }
+
+    .btn-account {
+        background-color: darkred;
+        color: white;
+        width: 150px;
+        border-radius: 8px;
+        border-color: darkred;
+        border-style: solid;
+        border-width: thin;
+        padding: 10px;
+    }
+    .btn-account:hover {
+        background-color: white;
+    }
+
+    .collection-quote-list {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        align-items: center;
+        width: 90%;
+        margin-top: 50px;
+    }
+
+    .individual-entry {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+        width: 90%;
+        padding: 30px 0 ;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .individual-entry p {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        align-self: flex-end;
+    }
+
+    input {
+        border-radius: 8px;
+        background-color: darkred;
+        color: white;
+    }
+
+    .quote-entry {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .quote-entry p {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        align-self: flex-end;
+    }
+
+    #quote-detail-buttons {
+        display: flex;
+        align-self: center;
+
+    }
+
+    #quote-detail-buttons a {
+        margin: 5px;
+    }
+
+    #collection-detail > * {
+        margin: 30px;
+    }
+
+    #quotes-in-collection {
+        font-family: 'Courier New', Courier, monospace;
+    } 
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    width: 80vw;
-}
+@media only screen and (max-width: 600px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        padding: 10px;
+        overflow-x: hidden;
+        margin: auto;
+        width: 95vw;
+        font-size: 60px;
+    }
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
-a:hover {
-    color: darkred;
-}
+    main {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        width: 80vw;
+    }
 
-#top-block {
-    display: flex;
-    height: 60vh;
-    align-items: center;
-    justify-content: center;
-}
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
 
-#headline-title-nav {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: yellow;
-}
-#headline-title {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: yellow;
-    display:inline-block;
-    font-size: 350%;
-}
+    a:hover {
+        color: darkred;
+    }
 
-#coqu-nav {
-    display: flex;
-    justify-content: space-between;
-    width: 20rem;
-    align-self: center;
-}
-.collectoin-quote-item {
-    padding: 5px;
-}
+    #coqu-nav {
+        display: flex;
+        justify-content: space-between;
+        align-self: center;
+        align-items: center;
+        margin: 20px 0;
+    }
 
-.btn {
-    background-color: darkred;
-    color: white;
-    width: 10rem;
-}
+    #coqu-nav a {
+        padding: 20px;
+    }
 
-.btn:hover {
-    color: darkred;
-}
+    #top-block {
+        display: flex;
+        height: 50vh;
+        align-items: center;
+        justify-content: center;
+    }
 
-.btn-account {
-    background-color: darkred;
-    color: white;
-    width: 5rem;
-    border-radius: 8px;
-    border-color: darkred;
-    border-style: solid;
-    border-width: thin;
-    padding: 10px;
-}
-.btn-account:hover {
-    background-color: white;
-}
+    #headline-title-nav {
+        font-family: 'Courier New', Courier, monospace;
+        background-color: yellow;
+        font-size: 60px;
+    }
+    #headline-title {
+        font-family: 'Courier New', Courier, monospace;
+        background-color: yellow;
+        display:inline-block;
+        font-size: 110px;
+    }
 
-.collection-quote-list {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    align-items: center;
-    width: 90%;
-    margin-top: 5rem;
-}
+    .collectoin-quote-item {
+        padding: 5px;
+    }
 
-.individual-entry {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    padding: 2rem 0 ;
-    font-family: 'Courier New', Courier, monospace;
-}
+    .btn {
+        background-color: darkred;
+        color: white;
+        font-size: 60px;
+    }
 
-.individual-entry p {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    align-self: flex-end;
+    .btn:hover {
+        color: darkred;
+    }
 
-}
+    .btn-account {
+        background-color: darkred;
+        color: white;
+        width: 150px;
+        border-radius: 8px;
+        border-color: darkred;
+        border-style: solid;
+        border-width: thin;
+        padding: 10px;
+        font-size: 50px;
+    }
+    .btn-account:hover {
+        background-color: white;
+    }
 
-input {
-    border-radius: 8px;
-    background-color: darkred;
-    color: white;
-}
+    .collection-quote-list {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        align-items: center;
+        width: 90%;
+        margin-top: 50px;
+    }
 
-.quote-entry {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5rem;
-    font-family: 'Courier New', Courier, monospace;
-}
+    .individual-entry {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+        width: 90%;
+        padding: 30px 0 ;
+        margin: 40px 0;
+        font-family: 'Courier New', Courier, monospace;
+    }
 
-.quote-entry p {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    align-self: flex-end;
-}
+    .individual-entry p {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        align-self: flex-end;
+        font-size: 40px;
+    }
 
-#quote-detail-buttons {
-    display: flex;
-    align-self: center;
+    .quote-entry {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px;
+        font-family: 'Courier New', Courier, monospace;
+    }
 
-}
+    .quote-entry h1 {
+        font-size: 60px;
+        padding-bottom: 30px;
+    }
 
-#quote-detail-buttons a {
-    margin: 5px;
+    .quote-entry p {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        align-self: flex-end;
+        font-size: 40px;
+    }
+
+    #quote-detail-buttons {
+        display: flex;
+        align-self: center;
+
+    }
+
+    #quote-detail-buttons a {
+        margin: 5px;
+    }
+
+    #collection-detail > * {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        align-self:center;
+        margin: 30px;
+        width: 100%;
+    }
+
+    #collection-detail h1 {
+        font-size: 60px;
+    }
+
+    #quotes-in-collection {
+        font-family: 'Courier New', Courier, monospace;
+    }
 }

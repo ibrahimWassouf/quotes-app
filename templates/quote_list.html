@@ -6,8 +6,8 @@
 
     {% for bookQuote in object_list %}
     <div class="individual-entry">
-        <h4><a href="{% url 'quote_detail' bookQuote.pk %}">"{{ bookQuote.quote }}"</a></h4>
-        <p>~ {{ bookQuote.author }}</p>
+        <a href="{% url 'quote_detail' bookQuote.pk %}">"{{ bookQuote.quote }}"</a>
+        <p>~ {{ bookQuote.author }}, {{ bookQuote.title}}{% if bookQuote.year_of_publication != None %}, {{ bookQuote.year_of_publication }}{% endif%}</p>
     </div>
     {% endfor %}
 </section>

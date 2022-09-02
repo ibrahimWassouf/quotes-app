@@ -6,6 +6,8 @@ class BookQuote(models.Model):
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=200)
     quote = models.TextField()
+    page = models.IntegerField(blank=True, null=True)
+    year_of_publication = models.IntegerField(blank=True, null=True)
     creator = models.CharField(max_length=200)
 
     def __str__(self):

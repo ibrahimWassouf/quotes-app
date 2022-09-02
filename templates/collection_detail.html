@@ -2,14 +2,15 @@
 
 
 {% block content %}
+    <div id="collection-detail" class="collection-quote-list">
+        <h1>{{object.title}}</h1>
 
-    <h1>{{object.title}}</h1>
+        {% if object.title != 'All Quotes' %}
+            <a class="btn" href="{% url 'collection_add' object.pk %}">Edit Collection</a>
+        {% endif%}
 
-    {% if object.title != 'All Quotes' %}
-        <a class="btn" href="{% url 'collection_add' object.pk %}">Edit Collection</a>
-    {% endif%}
-
-    {% for quote in object.quotes.all %}
-    <p>{{quote.title}}</p>
-    {% endfor %}
+        {% for quote in object.quotes.all %}
+        <a id="quotes-in-collection" href="{% url 'quote_detail' quote.id %}">"{{quote.quote}}"</a>
+        {% endfor %}
+    </div>
 {% endblock content %}

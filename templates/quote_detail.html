@@ -2,9 +2,11 @@
 
 {% block content %}
     <div class="quote-entry">
-        <h2>"{{ object.title }}"</h2>
-        <p>{{ object.quote }}</p>
-        <p>{{ object.author}}</p>
+        <h1>"{{ object.quote }}"</h1>
+        <p>Book Title: {{ object.title }}</p>
+        <p>Author: {{ object.author}}</p>
+        <p>Page: {{object.page}}</p>
+        <p>Year of Publication: {{object.year_of_publication}}</p>
     </div>
 
     <div id="quote-detail-buttons">

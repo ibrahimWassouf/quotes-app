@@ -6,7 +6,7 @@
     <section class="collection-quote-list">
         {% for object in object_list %}
             <div class="individual-entry">
-                <h2><a href="{% url 'collection_detail' object.pk%}">{{object.title}}</a></h2>
+                <a href="{% url 'collection_detail' object.pk%}">{{object.title}}</a>
             </div>
         {% endfor %}
         

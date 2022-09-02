@@ -10,7 +10,7 @@
     <body>
         <header class="navbar">
             <div>
-                <h1 id="headline-title-nav"><a href="{% url 'home' %}">Quotes App</a></h1>
+                <a id="headline-title-nav" href="{% url 'home' %}">Quotes App</a>
             </div>
             <div>
                 {% if user.is_authenticated%}
@@ -23,8 +23,8 @@
         </header>
         <main>
             <nav id="coqu-nav">
-                <h3 class="collection-quote-item"><a href="{% url 'collections' %}">Collections</a></h3>
-                <h3 class="collection-qoute-item"><a href="{% url 'quote_list' %}">Quotes</a></h3>
+                <a class="collection-quote-item" href="{% url 'collections' %}">Collections</a>
+                <a class="collection-qoute-item" href="{% url 'quote_list' %}">Quotes</a>
             </nav>
             
             {% block content %}
