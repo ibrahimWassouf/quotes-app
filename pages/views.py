@@ -45,6 +45,7 @@ class QuoteUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = BookQuote
     template_name = 'quote_edit.html'
     fields = ['title', 'author', 'quote', 'page', 'year_of_publication']
+    
     #ensures only the correct user -the creator- has access to the view
     def test_func(self):
         obj = self.get_object()
