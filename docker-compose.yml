@@ -3,11 +3,10 @@ version: '3.7'
 services:
   web:
     build: .
-    command: python /code/manage.py runserver 0.0.0.0:8000
+    command: gunicorn quotes.wsgi -b 0.0.0.0:8000
     environment:
-      - ENVIRONMENT=development
+      - ENVIRONMENT=production
       - SECRET_KEY=1wpp-9lF105v3w6zhpL3-G-XcyHuML7cj9T8QjTB3Ak
-      - DEBUG=1
     volumes:
       - .:/code
     ports:
@@ -19,6 +18,8 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     environment:
-      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
 volumes:
   postgres_data:
+
