@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/911eec97-04dd-4566-bfd7-53c6102f7754/microsoft.web/sites/subscriptions/911eec97-04dd-4566-bfd7-53c6102f7754/resourceGroups/quotesAppGroup/providers/Microsoft.Web/sites/quotes-web-app",
+    "appService.deploySubpath": "."
+}
