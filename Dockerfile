@@ -9,3 +9,5 @@ COPY Pipfile Pipfile.lock /code/
 RUN pip install pipenv && pipenv install --system
 
 COPY . /code/
+
+CMD ["python", "/code/manage.py", "runserver", "0.0.0.0:8000"]
