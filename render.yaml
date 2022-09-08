@@ -5,7 +5,7 @@ databases:
 
 services:
   - type: web
-    name: mysite
+    name: quotes-app
     env: python
     buildCommand: "./build.sh"
     startCommand: "gunicorn quotes.wsgi"
