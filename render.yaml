@@ -8,7 +8,7 @@ services:
     name: mysite
     env: python
     buildCommand: "./build.sh"
-    startCommand: "gunicorn quotes.wsgi:application"
+    startCommand: "gunicorn quotes.wsgi"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
